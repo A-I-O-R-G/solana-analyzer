@@ -1,40 +1,47 @@
 
-# Solana Analyzer 
+# solana-analyzer
 
-Bem-vindo ao repositório **Solana Analyzer**! 🎉 Este projeto é uma ferramenta desenvolvida para a análise de dados na blockchain Solana, proporcionando recursos que facilitam a visualização e interpretação das informações.  
+Bem-vindo ao repositório **solana-analyzer**! 🎉 Este projeto foi desenvolvido para fornecer uma análise abrangente da blockchain Solana. Abaixo, você encontrará as informações sobre as funcionalidades e características do software.
 
-## Descrição do Projeto  
-O **Solana Analyzer** é uma aplicação que permite que usuários e desenvolvedores possam explorar e analisar dados da blockchain Solana de forma intuitiva e eficiente. Esta ferramenta é ideal para pesquisadores, desenvolvedores e entusiastas que desejam obter insights sobre a rede Solana.  
+## Funcionalidades
 
-## Funcionalidades  
-- Análise de transações: Obtenha detalhes sobre transações individuais, incluindo remetentes, destinatários e valores.  
-- Visualização de dados: Explore gráficos interativos que mostram a atividade da rede ao longo do tempo.  
-- Relatórios personalizáveis: Gere relatórios em diferentes formatos para facilitar a apresentação dos dados.  
-- Comparação de endereços: Compare o desempenho de diferentes endereços dentro da blockchain.  
+- **Análise de transações:** Monitora e analisa transações na blockchain Solana.
+- **Visualização de dados:** Apresenta dados em gráficos e tabelas para facilitar a interpretação.
+- **Relatórios customizáveis:** Permite a geração de relatórios personalizados com base nas análises realizadas.
+- **Suporte a múltiplas versões:** Inclui tanto o código do software antigo quanto o novo, garantindo a compatibilidade e a evolução do projeto.
 
-## Instalação  
-Para instalar o **Solana Analyzer**, siga os passos abaixo:  
-1. Clone o repositório:  
-   ```bash  
-   git clone https://github.com/seu_usuario/solana-analyzer.git  
-   ```  
-2. Navegue até o diretório do projeto:  
-   ```bash  
-   cd solana-analyzer  
-   ```  
-3. Instale as dependências:  
-   ```bash  
-   npm install  
-   ```  
-4. Execute a aplicação:  
-   ```bash  
-   npm start  
-   ```  
+## Instalação
 
-## Contribuições  
-Contribuições são bem-vindas! Se você desejar contribuir com o projeto, fique à vontade para abrir uma pull request ou relatar problemas.  
+Para instalar o **solana-analyzer**, siga os passos abaixo:
 
-## Contato  
-Se você tiver dúvidas ou sugestões, não hesite em entrar em contato. Estou aqui para ajudar! 😊  
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/seu_usuario/solana-analyzer.git
+   ```
+2. Navegue até o diretório do projeto:
+   ```bash
+   cd solana-analyzer
+   ```
+3. Instale as dependências:
+   ```bash
+   npm install
+   ```
 
-Obrigado por usar o **Solana Analyzer**!
+## Uso
+
+Para utilizar o software, execute o seguinte comando:
+```bash
+npm start
+```
+
+## Contribuições
+
+Contribuições são sempre bem-vindas! Sinta-se à vontade para abrir issues ou pull requests para melhorias.
+
+## Licença
+
+Este projeto está licenciado sob a MIT License - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+## Agradecimentos
+
+Agradecemos a todos que contribuíram e apoiaram o desenvolvimento do **solana-analyzer**! Se precisar de mais assistência ou tiver dúvidas, não hesite em entrar em contato! 😊
