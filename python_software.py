@@ -20,7 +20,7 @@ class SolanaAnalyzer:
             print(f"Erro ao coletar dados: {e}")
 
     def calculate_indicators(self):
-        """Calcula indicadores técnicos: MA, RSI, MACD e Bandas de Bollinger."""
+        """Calcula indicadores técnicos: MA, RSI, MACD, Bandas de Bollinger e Estocástico."""
         if self.data is None:
             raise Exception("Dados não carregados. Execute collect_data primeiro.")
 
@@ -130,6 +130,57 @@ class SolanaAnalyzer:
         elif last_stochastic < 20:
             print(f"Aviso: O Estocástico está baixo ({last_stochastic:.2f}). Considere realizar compras.")
 
+    def save_analysis_report(self, filename='solana_analysis_report.txt'):
+        """Salva um relatório da análise em um arquivo texto."""
+        if self.data is None:
+            raise Exception("Dados não carregados. Execute collect_data primeiro.")
+
+        with open(filename, 'w') as file:
+            file.write(f"Análise para {self.symbol} em {self.data.index[-1].date()}
+")
+            file.write(f"Preço atual: {self.data['Close'].iloc[-1]:.2f}
+")
+            file.write(f"MA20: {self.data['MA20'].iloc[-1]:.2f}
+")
+            file.write(f"RSI: {self.data['RSI'].iloc[-1]:.2f}
+")
+            file.write(f"MACD: {self.data['MACD'].iloc[-1]:.2f}
+")
+            file.write(f"Estocástico: {self.data['Stochastic'].iloc[-1]:.2f}
+")
+            file.write(f"Alertas:
+")
+            last_ma = self.data['MA20'].iloc[-1]
+            last_price = self.data['Close'].iloc[-1]
+            last_rsi = self.data['RSI'].iloc[-1]
+            last_stochastic = self.data['Stochastic'].iloc[-1]
+            
+            # Alertas para cruzamentos de média
+            if last_price > last_ma:
+                file.write(f"O preço ({last_price:.2f}) cruzou acima da MA de 20 dias ({last_ma:.2f}).
+")
+            elif last_price < last_ma:
+                file.write(f"O preço ({last_price:.2f}) cruzou abaixo da MA de 20 dias ({last_ma:.2f}).
+")
+
+            # Alertas para o RSI
+            if last_rsi > 70:
+                file.write(f"O RSI está alto ({last_rsi:.2f}).
+")
+            elif last_rsi < 30:
+                file.write(f"O RSI está baixo ({last_rsi:.2f}).
+")
+
+            # Alertas para o Estocástico
+            if last_stochastic > 80:
+                file.write(f"O Estocástico está alto ({last_stochastic:.2f}).
+")
+            elif last_stochastic < 20:
+                file.write(f"O Estocástico está baixo ({last_stochastic:.2f}).
+")
+
+        print(f"Relatório salvo em '{filename}'.")
+
 if __name__ == '__main__':
     try:
         analyzer = SolanaAnalyzer()
@@ -137,5 +188,6 @@ if __name__ == '__main__':
         analyzer.calculate_indicators()
         analyzer.plot_data()
         analyzer.alert_system()
+        analyzer.save_analysis_report()
     except Exception as e:
         print(f"Ocorreu um erro: {e}")
